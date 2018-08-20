@@ -1,0 +1,5 @@
+自己写的关于录制视频的项目：
+
+内容取自：
+QrScan-master  二维码项目
+AudioVideoRecordingSample-master  日本人写的通过MediaCodec和MediaMuxer录视频项目
