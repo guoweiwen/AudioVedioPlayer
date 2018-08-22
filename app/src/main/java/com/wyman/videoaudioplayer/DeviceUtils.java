@@ -18,8 +18,8 @@ public class DeviceUtils {
     public static int dip2Px(float dipValue){
         final float scale = Resources.getSystem().getDisplayMetrics().densityDpi;
         //每个设备的密度 scale = px / dp
-        double px = dipValue * scale + 0.5;//加0.5为了4舍5入
-        return Integer.getInteger(String.valueOf(px));
+        int px = (int)(dipValue * scale + 0.5);//加0.5为了4舍5入
+        return px;
     }
 
     /**
@@ -27,7 +27,7 @@ public class DeviceUtils {
      * */
     public static int px2Dip(float pxValue){
         final int scale =  Resources.getSystem().getDisplayMetrics().densityDpi;
-        return Integer.getInteger(String.valueOf(pxValue / scale + 0.5));
+        return (int)(pxValue / scale + 0.5);
     }
 
     /**
@@ -39,7 +39,7 @@ public class DeviceUtils {
         WindowManager windowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
         DisplayMetrics dm = new DisplayMetrics();
         windowManager.getDefaultDisplay().getMetrics(dm);
-        int width = Integer.parseInt(String.valueOf(dm.widthPixels / dm.density));
+        int width = (int)(dm.widthPixels / dm.density);
         return width;
     }
 
@@ -50,7 +50,7 @@ public class DeviceUtils {
         WindowManager windowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
         DisplayMetrics dm = new DisplayMetrics();
         windowManager.getDefaultDisplay().getMetrics(dm);
-        int heightDp = Integer.parseInt(String.valueOf(dm.heightPixels / dm.density));
+        int heightDp = (int)(dm.heightPixels / dm.density);
         return heightDp;
     }
 
