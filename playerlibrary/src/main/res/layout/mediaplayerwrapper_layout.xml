@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <com.wyman.playerlibrary.SurfaceViewWrapper
+        android:id="@+id/surfaceviewwrapper_video"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <RelativeLayout
+        android:id="@+id/mediaplayer_linearlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        >
+
+        <android.support.v7.widget.AppCompatSeekBar
+            android:id="@+id/playerlength_seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:layout_marginTop="5dp"
+            android:max="100"
+            android:progress="20"
+            android:thumb="@null"
+            />
+
+        <!-- 显示当前时间 -->
+        <TextView
+            android:id="@+id/displaystarttime_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/playerlength_seekbar"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:text="00:00:00"
+            android:textSize="14sp"
+            />
+
+        <!-- 显示总时间 -->
+        <TextView
+            android:id="@+id/displaytotaltime_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/playerlength_seekbar"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+            android:text="00:00:00"
+            android:textSize="14sp"
+            />
+
+        <!-- 播放停止按钮 全屏按钮 锁屏按钮 -->
+        <RelativeLayout
+            android:id="@+id/control_linearlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/displaystarttime_textview"
+            android:layout_marginTop="5dp"
+            >
+            <ImageButton
+                android:id="@+id/changeorientation_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+
+                />
+
+            <ImageButton
+                android:id="@+id/playorstop_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                />
+
+            <ImageButton
+                android:id="@+id/lock_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                />
+        </RelativeLayout>
+    </RelativeLayout>
+</FrameLayout>

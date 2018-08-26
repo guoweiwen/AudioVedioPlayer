@@ -1,5 +1,7 @@
 package com.wyman.playerlibrary;
 
+import android.view.SurfaceHolder;
+
 /**
  * Created by wyman
  * on 2018-08-26.
@@ -30,5 +32,15 @@ public interface MediaPlayerInterface {
      * 从哪里开始播放
      * @param msec 毫秒
      * */
-    void seekTo(long msec);
+    void seekTo(int msec);
+
+    /**
+     * 设置播放资源
+     * @param path 资源的路径
+     * */
+    void setDataSource(String path);
+
+    void setDisplay(SurfaceHolder surfaceHolder);
+
+    boolean isPlaying();
 }
