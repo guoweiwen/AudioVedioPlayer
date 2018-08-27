@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:id="@+id/framelayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <com.wyman.playerlibrary.SurfaceViewWrapper
         android:id="@+id/surfaceviewwrapper_video"
@@ -17,12 +19,15 @@
         <android.support.v7.widget.AppCompatSeekBar
             android:id="@+id/playerlength_seekbar"
             android:layout_width="match_parent"
-            android:layout_height="5dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-20dp"
+            android:layout_marginRight="-20dp"
             android:layout_marginTop="5dp"
+            android:indeterminate="false"
             android:max="100"
             android:progress="20"
-            android:thumb="@null"
-            />
+            android:progressDrawable="@drawable/seekbar_style1"
+            android:thumb="@mipmap/player_guide_dot_checked" />
 
         <!-- 显示当前时间 -->
         <TextView
@@ -35,6 +40,7 @@
             android:layout_marginTop="5dp"
             android:text="00:00:00"
             android:textSize="14sp"
+            android:textColor="@android:color/white"
             />
 
         <!-- 显示总时间 -->
@@ -48,6 +54,7 @@
             android:layout_marginTop="5dp"
             android:text="00:00:00"
             android:textSize="14sp"
+            android:textColor="@android:color/white"
             />
 
         <!-- 播放停止按钮 全屏按钮 锁屏按钮 -->
@@ -63,7 +70,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
-
+                android:src="@mipmap/player_fill"
+                android:background="@android:color/transparent"
                 />
 
             <ImageButton
@@ -71,14 +79,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
+                android:src="@mipmap/player_center_switch_play"
+                android:background="@android:color/transparent"
                 />
 
-            <ImageButton
-                android:id="@+id/lock_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                />
+
         </RelativeLayout>
     </RelativeLayout>
+
+    <ImageButton
+        android:id="@+id/lock_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:src="@mipmap/player_video_player_unlock"
+        android:background="@android:color/transparent"
+        />
 </FrameLayout>
