@@ -172,6 +172,7 @@ public interface INiceVideoPlayer {
     /**
      * 释放INiceVideoPlayer，释放后，内部的播放器被释放掉，同时如果在全屏、小窗口模式下都会退出
      * 并且控制器的UI也应该恢复到最初始的状态.
+     * 释放播放器，控制UI恢复到初始状态
      */
     void release();
 }
